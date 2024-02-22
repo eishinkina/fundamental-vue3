@@ -8,7 +8,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    posts: {
+      type: Array,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
