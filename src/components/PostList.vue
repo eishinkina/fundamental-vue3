@@ -1,7 +1,13 @@
 <template>
   <div>
     <h3>Список пользователей</h3>
-    <PostItem class="post" v-for="post in posts" :post="post" />
+    <PostItem
+      class="post"
+      v-for="post in posts"
+      :key="post.id"
+      :post="post"
+      @remove="$emit('remove', post)"
+    />
   </div>
 </template>
 
@@ -19,6 +25,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
