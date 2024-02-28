@@ -5,6 +5,12 @@
       <MyButton class="nav__btn" @click="$router.push('/post')">Посты</MyButton>
       <MyButton
         class="nav__btn"
+        @click="$router.push('/store')"
+        style="margin-left: 20px"
+        >store</MyButton
+      >
+      <MyButton
+        class="nav__btn"
         style="margin-left: 20px"
         @click="$router.push('/about')"
         >О сайте</MyButton
