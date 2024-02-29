@@ -63,11 +63,6 @@ export default {
       ],
     };
   },
-  watch: {
-    // page() {
-    //   this.fetchPosts();
-    // },
-  },
   methods: {
     createPost(post) {
       this.posts.push(post);

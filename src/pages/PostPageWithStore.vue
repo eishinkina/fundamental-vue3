@@ -1,10 +1,19 @@
 <template>
   <div>
     <h1>Страница с постами</h1>
-    <MyInput v-focus placeholder="Поиск..." :model-value="searchQuery" @update:model-value="setSearchQuery"></MyInput> 
+    <MyInput
+      v-focus
+      placeholder="Поиск..."
+      :model-value="searchQuery"
+      @update:model-value="setSearchQuery"
+    ></MyInput>
     <div class="app__btns">
       <MyButton @click="showDialog">Создать пост</MyButton>
-    <MySelect :model-value="selectedSort" @update:model-value="setSelectedSort" :options="sortOptions"></MySelect> 
+      <MySelect
+        :model-value="selectedSort"
+        @update:model-value="setSelectedSort"
+        :options="sortOptions"
+      ></MySelect>
     </div>
 
     <MyDialog v-model:show="dialogVisible"
@@ -18,17 +27,6 @@
     />
     <div v-else>Идет загрузка...</div>
     <div v-intersection="loadMorePosts" class="observer"></div>
-    <div class="page__wrapper">
-      <div
-        v-for="pageNumber in totalPages"
-        :key="pageNumber"
-        class="page"
-        :class="{ current__page: page === pageNumber }"
-        @click="page = pageNumber"
-      >
-        {{ pageNumber }}
-      </div>
-    </div>
   </div>
 </template>
 
@@ -53,7 +51,7 @@ export default {
     ...mapMutations({
       setPage: "post/setPage",
       setSearchQuery: "post/setSearchQuery",
-      setSelectedSort: "post/setSelectedSort"
+      setSelectedSort: "post/setSelectedSort",
     }),
     ...mapActions({
       loadMorePosts: "post/loadMorePosts",
